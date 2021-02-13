@@ -17,12 +17,8 @@ mongoose.connect(uri,
 )
     .then(() => console.log('DB Connected'))
     .catch(e => console.log('error db:', e))
-
-
-if (process.env.NODE_ENV === 'production'){
-    app.use(express.static("client/build"));
-}
-
+console.log(process.env.MONGO_USER);
+console.log(process.env.MONGO_PASSWORD);
 const authRoutes = require('./controller/action');
 app.use('/api/user', authRoutes);
 // start the server in the port 3005 !
