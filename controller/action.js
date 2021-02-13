@@ -36,4 +36,16 @@ router.post('/register', async (req, res) => {
         res.status(400).json({error})
     }
 });
+router.get('/getUsers', async (req, res) => {
+    try {
+        User.find().then((users)=>{
+            res.json({
+                error: null,
+                data: users
+            })
+        })
+    } catch (error) {
+        res.status(400).json({error})
+    }
+});
 module.exports = router;
