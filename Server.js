@@ -11,7 +11,7 @@ app.use(bodyparser.json());
 
 const PORT = process.env.PORT || 3005
 // bd connect
-const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@pop.zsndr.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@pop.zsndr.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 mongoose.connect(uri,
     { useNewUrlParser: true, useUnifiedTopology: true }
 )
